@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Özür Dilerim</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-color: #f0f8ff;
+      margin-top: 100px;
+    }
+    #evet, #hayir {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #evet {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #hayir {
+      background-color: #f44336;
+      color: white;
+    }
+    #not {
+      display: none;
+      font-size: 24px;
+      margin-top: 50px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Benimle barışır mısın? 🙈</h1>
+  <button id="evet">Evet 💚</button>
+  <button id="hayir">Hayır ❌</button>
+
+  <div id="not">Teşekkür ederim... Gerçekten özür dilerim. Senin gibi birini kırmak istememiştim. 💌</div>
+
+  <script>
+    const evetBtn = document.getElementById("evet");
+    const hayirBtn = document.getElementById("hayir");
+    const notDiv = document.getElementById("not");
+
+    let scale = 1;
+
+    hayirBtn.addEventListener("click", () => {
+      scale += 0.3;
+      evetBtn.style.transform = `scale(${scale})`;
+
+      if (scale >= 5) {
+        evetBtn.style.display = "none";
+        hayirBtn.style.display = "none";
+        notDiv.style.display = "block";
+      }
+    });
+
+    evetBtn.addEventListener("click", () => {
+      evetBtn.style.display = "none";
+      hayirBtn.style.display = "none";
+      notDiv.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
